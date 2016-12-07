@@ -23,15 +23,21 @@ var quoteObject = {
 };
 
 var arr = Object.keys(quoteObject);
+var colors = ["red", "yellow", "blue", "green", "purple", "grey"];
+var count = 0;
 
 function buildQuotes() {
-    var count = Math.floor(Math.random()*(arr.length));
+    count = Math.floor(Math.random()*(arr.length));
+
     document.getElementById("quote").innerHTML = '"' + quoteObject[arr[count]] + '"';
+
     document.getElementById("author").innerHTML = arr[count];
 
+    var ran = Math.floor(Math.random()*(colors.length));
+
+    document.getElementById("main").style.color = colors[ran];
   }
 
-function click(){
-  var b = document.getElementById('but');
-  b.onclick = buildQuotes();
+function thing(){
+  console.log(count, arr[count]);
 }
